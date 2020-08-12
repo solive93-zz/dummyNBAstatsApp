@@ -9,7 +9,7 @@ export class TeamsService {
   constructor(private http: HttpClient) { }
 
   protected apiUrl = 'https://free-nba.p.rapidapi.com/';
-  protected sampleLogoLink = 'https://i.ytimg.com/vi/FJK-zqmwLNQ/hqdefault.jpg';
+  
 
   getTeams()
   {
@@ -20,8 +20,4 @@ export class TeamsService {
     
   }
 
-  getLogo()
-  {
-    return this.sampleLogoLink
-  }
 }

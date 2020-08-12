@@ -18,8 +18,6 @@ export class Tab2Page {
     this.teamsService.getTeams().subscribe(data => {
       this.teams = data
     })
-
-    this.sampleLogo = this.teamsService.getLogo();
   }
 
 }
