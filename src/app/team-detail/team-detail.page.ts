@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamsService } from '../services/teams.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-team-detail',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamDetailPage implements OnInit {
 
-  constructor() { }
+  protected team: any = [];
+
+  constructor(private activatedRoute: ActivatedRoute, private teamsService: TeamsService) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(paramMap => {
+      const teamId = paramMap.get('teamId')
+      
+      this.teamsService.getTeam(teamId).subscribe(data => {
+        this.team = data
+      })
+      
+    })
+
+   
   }
 
 }
