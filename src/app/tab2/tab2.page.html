@@ -9,9 +9,23 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">NBA Teams</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let team of teams.data">
+      <ion-avatar></ion-avatar>
+      <ion-row>
+        <ion-label>{{ team.full_name }}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label slot="bottom" >{{ team.conference }} conference | {{ team.division }} division </ion-label>
+      </ion-row>
+      
+      
+      
+      
+      
+    </ion-item>
+  </ion-list>
 </ion-content>
