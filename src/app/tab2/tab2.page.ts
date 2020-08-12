@@ -8,14 +8,18 @@ import { TeamsService } from '../services/teams.service'
 })
 export class Tab2Page {
 
-  teams: any;
+  protected teams: any = [];
+  protected sampleLogo: string = "";
+
   constructor(private teamsService: TeamsService) { }
 
   ngOnInit() 
-  {
+  { 
     this.teamsService.getTeams().subscribe(data => {
       this.teams = data
     })
+
+    this.sampleLogo = this.teamsService.getLogo();
   }
 
 }
