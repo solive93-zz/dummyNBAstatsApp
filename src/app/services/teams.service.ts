@@ -26,4 +26,12 @@ export class TeamsService {
     } 
   });
   }
+
+  getFavTeam()
+  {
+    return this.http.get(this.apiUrl + 'teams/5', { headers: {
+      "x-rapidapi-key": "398fc55a3emsh5cb0fb47f92da62p1c9017jsn9bdb0ac2a947",
+      }
+    });
+  }
 }

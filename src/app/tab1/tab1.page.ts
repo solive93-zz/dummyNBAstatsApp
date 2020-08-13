@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TeamsService } from '../services/teams.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  protected myTeam: any = [];
+
+  constructor(private teamsService: TeamsService) {}
+
+  ngOnInit() 
+  {
+    this.teamsService.getFavTeam().subscribe(data => {
+      console.log(data)
+      //this.myTeam = data;
+    })
+  }
 
 }
