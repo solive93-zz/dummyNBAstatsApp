@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TeamsService } from '../services/teams.service';
+import { GamesService } from '../services/games.service';
 
 @Component({
   selector: 'app-tab1',
@@ -8,15 +8,14 @@ import { TeamsService } from '../services/teams.service';
 })
 export class Tab1Page {
 
-  protected myTeam: any = [];
+  protected games: any = [];
 
-  constructor(private teamsService: TeamsService) {}
+  constructor(private gamesService: GamesService) {}
 
   ngOnInit() 
   {
-    this.teamsService.getFavTeam().subscribe(data => {
-      console.log(data)
-      //this.myTeam = data;
+    this.gamesService.getGames().subscribe(data => {
+      this.games = data;
     })
   }
 
