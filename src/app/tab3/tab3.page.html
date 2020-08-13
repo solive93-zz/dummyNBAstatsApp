@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Player Stats
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,32 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Player Stats</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card *ngFor="let stat of stats.data">   
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="4">
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJ2f2jXT6CXFckRdlxxi4qho4QWISEld2qsg&usqp=CAU"></ion-img>
+            </ion-avatar>
+          </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-card-subtitle>{{stat.team.full_name}}</ion-card-subtitle>
+        <ion-card-title>{{stat.player.last_name}}, {{stat.player.first_name}}</ion-card-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card-subtitle>
+          {{stat.pts}} points | {{stat.reb}} assists | {{stat.reb}} rebounds | {{stat.stl}} steals 
+        </ion-card-subtitle>
+      </ion-col>
+    </ion-row>
+    </ion-card-header>
+  </ion-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>

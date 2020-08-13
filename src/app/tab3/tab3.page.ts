@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StatsService } from '../services/stats.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(private statsService: StatsService) {}
+
+  protected stats: any = [];
+
+  ngOnInit()
+  {
+    this.statsService.getStats().subscribe(data => {
+      this.stats = data;
+    })
+  }
 
 }
