@@ -12,7 +12,7 @@ export class GamesService {
 
   getGames()
   {
-    this.http.get(this.apiUrl + 'games', { headers: {
+    return this.http.get(this.apiUrl + 'games', { headers: {
       "x-rapidapi-key": "398fc55a3emsh5cb0fb47f92da62p1c9017jsn9bdb0ac2a947"
       }
     })
@@ -20,7 +20,7 @@ export class GamesService {
 
   getGame(gameId: string)
   {
-    this.http.get(this.apiUrl + 'games/', { headers: {
+    return this.http.get(this.apiUrl + 'games/' + gameId, { headers: {
       "x-rapidapi-key": "398fc55a3emsh5cb0fb47f92da62p1c9017jsn9bdb0ac2a947"
       }
     })
