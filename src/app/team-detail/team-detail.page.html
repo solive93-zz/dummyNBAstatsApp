@@ -1,18 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons>
-      <ion-back-button defaulHref="/tabs/tab/2"></ion-back-button>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab/2"></ion-back-button>
     </ion-buttons>
     <ion-title>{{team.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-   <ion-thumnail>
-     <ion-img src="https://i.ytimg.com/vi/FJK-zqmwLNQ/hqdefault.jpg"></ion-img>
-   </ion-thumnail>
+  <ion-card>   
     <ion-card-header>
+      <ion-img src="https://i.ytimg.com/vi/FJK-zqmwLNQ/hqdefault.jpg"></ion-img>
       <ion-card-subtitle>{{team.abbreviation}}</ion-card-subtitle>
       <ion-card-title>{{team.full_name}}</ion-card-title>
     </ion-card-header>
