@@ -20,8 +20,26 @@
     </ion-item-divider>    
     <ion-card *ngFor="let game of games.data">
       <ion-card-header>
-        <ion-card-subtitle>{{game.home_team.conference}} conference</ion-card-subtitle>
-        <ion-card-title><strong>{{game.home_team.name}}</strong> {{game.home_team_score}} : {{game.visitor_team_score}}<strong>  {{game.visitor_team.name}}</strong></ion-card-title>
+        <ion-row>
+          <ion-card-subtitle>{{game.home_team.conference}} conference</ion-card-subtitle>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card-title>
+              <strong>{{game.home_team.name}}</strong>
+            </ion-card-title>
+          </ion-col>
+          <ion-col>
+            <ion-card-title>
+              {{game.home_team_score}} : {{game.visitor_team_score}}
+            </ion-card-title>
+          </ion-col>
+          <ion-col>
+            <ion-card-title>
+              <strong>{{game.visitor_team.name}}</strong>
+            </ion-card-title>
+          </ion-col>
+        </ion-row>
     </ion-card-header>
     </ion-card>
   </ion-list>
