@@ -2,7 +2,7 @@
 ### This is a silly NBA stats app developed with ionic and angular
 
 
-**Usage**
+#### Usage
 Those are the instructions to
 
 1. Clone the Repo
